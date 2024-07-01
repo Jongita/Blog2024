@@ -18,7 +18,11 @@ export class PostsController {
         // idedam irasa
         const newPost=new Post({
             title:req.body.title,
-            content:req.body.content
+            content:req.body.content,
+            author:{
+                name:req.body.author_name,
+                email:req.body.author_email
+            }
         });
         // paleidziam issaugojima (vykdoma asinchroniskai-promise del to await)
         await newPost.save();
@@ -29,9 +33,18 @@ export class PostsController {
     static async update(req:any, res:any){
         const post=await Post.findOne({'_id':req.params.id});
         if(post!=null){
-            post.title=req.body.title
-            post.content=req.body.content
-            post.save();
+            if(req.body.title!=null)
+                post.title=req.body.title
+            if(req.body.content!=null)
+                post.content=req.body.content
+            if(req.body.author_name!=null)
+                post.author.name=req.body.author_name;
+            if(req.body.author_email!=null)
+                post.author.email=req.body.author_email;
+
+                post.save();
+            }
+            res.json(post);
         }
         
         // dar galima ieskoti taip:
@@ -40,9 +53,7 @@ export class PostsController {
         //     'content':'Tekstas'
         // })
 
-        console.log(post);
-        res.json(post);
-    }
+    
 
     static async delete(req:any, res:any){
         const post=await Post.findOneAndDelete({
