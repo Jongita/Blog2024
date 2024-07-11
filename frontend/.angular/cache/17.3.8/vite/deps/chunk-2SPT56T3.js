@@ -13,7 +13,7 @@ import {
   getRtlScrollAxisType,
   hasModifierKey,
   supportsScrollBehavior
-} from "./chunk-BEUWRPRR.js";
+} from "./chunk-CWHGEJ7U.js";
 import {
   DOCUMENT,
   Location
@@ -5019,4 +5019,4 @@ export {
   Overlay,
   OverlayModule
 };
-//# sourceMappingURL=chunk-KGVWSHYR.js.map
+//# sourceMappingURL=chunk-2SPT56T3.js.map

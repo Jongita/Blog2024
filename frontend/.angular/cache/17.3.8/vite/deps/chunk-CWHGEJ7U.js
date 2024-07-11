@@ -4811,8 +4811,6 @@ export {
   _getFocusedElementPierceShadowDom,
   _getEventTarget,
   _isTestEnvironment,
-  Directionality,
-  BidiModule,
   BACKSPACE,
   ENTER,
   ESCAPE,
@@ -4833,6 +4831,8 @@ export {
   FocusMonitor,
   CdkMonitorFocus,
   A11yModule,
+  Directionality,
+  BidiModule,
   VERSION2 as VERSION,
   AnimationCurves,
   AnimationDurations,
@@ -4879,4 +4879,4 @@ export {
   MatRippleLoader,
   _MatInternalFormField
 };
-//# sourceMappingURL=chunk-BEUWRPRR.js.map
+//# sourceMappingURL=chunk-CWHGEJ7U.js.map
