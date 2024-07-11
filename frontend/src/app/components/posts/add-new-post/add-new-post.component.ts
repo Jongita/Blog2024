@@ -5,6 +5,7 @@ import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDividerModule } from '@angular/material/divider';
+import { PostsService } from '../../../services/posts.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { MatDividerModule } from '@angular/material/divider';
 })
 export class AddNewPostComponent {
 
-  constructor (private form:MatDialogRef<AddNewPostComponent>){}
+  constructor (private form:MatDialogRef<AddNewPostComponent>, private postsService:PostsService){}
 
   public onCloseForm(){
     this.form.close();
@@ -24,6 +25,21 @@ export class AddNewPostComponent {
 
   public onSubmitPost(form:NgForm){
     console.log(form.form.value);
+    this.postsService.addPost({
+      title:form.form.value.title,
+      content:form.form.value.content,
+      author:{
+        name:form.form.value.author_name,
+        email:form.form.value.author_email
+      },
+      comments:[]
+    }).subscribe({
+      next:(result)=>{
+        console.log(result);
+        this.form.close(true);
+      }
+    })
     
-  }
+  } 
+
 }
