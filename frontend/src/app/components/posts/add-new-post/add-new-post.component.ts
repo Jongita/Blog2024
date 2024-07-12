@@ -20,7 +20,7 @@ export class AddNewPostComponent {
   constructor (private form:MatDialogRef<AddNewPostComponent>, private postsService:PostsService){}
 
   public onCloseForm(){
-    this.form.close();
+    this.form.close(false);
   }
 
   public onSubmitPost(form:NgForm){
