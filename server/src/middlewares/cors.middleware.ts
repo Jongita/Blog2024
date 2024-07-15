@@ -6,4 +6,5 @@ const corsHeaders=(req:any, res:any, next:any)=>{
     next();
 }
 
-export {corsHeaders};
+export {corsHeaders} 
+;

@@ -10,4 +10,6 @@ postsRouter.post('/', PostsController.store);
 postsRouter.put('/:id', PostsController.update);
 postsRouter.delete('/:id', PostsController.delete);
 
+postsRouter.get('/pdf/:id', PostsController.pdf)
+
 export {postsRouter};
